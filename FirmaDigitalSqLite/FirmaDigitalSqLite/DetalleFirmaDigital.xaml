@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaDigitalSqLite.DetalleFirmaDigital"
+             BackgroundColor="#CBC7C7"
+             Title="Lista de firmas"
+             >
+    <StackLayout Padding="30">
+        <Frame  CornerRadius="5">
+            <StackLayout>
+                <ListView x:Name="firmasListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Nombre}" Grid.Column="0" />
+                                    <Image Source="{Binding FirmaImagen, Converter={StaticResource ByteArrayToImageSourceConverter}}" Grid.Column="2" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaDigitalSqLite.MainPage"
+             xmlns:signature="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             BackgroundColor="#CBC7C7"
+             Title="Formulario"
+             >
+
+    <StackLayout Padding="30">
+        <Frame  CornerRadius="5">
+            <StackLayout>
+                <Label Text="Nombre" />
+                <Entry x:Name="nombreEntry" />
+                <Label Text="Descripción" />
+                <Entry x:Name="descripcionEntry" />
+                <Label Text="Firma Digital" />
+                <signature:SignaturePadView x:Name="signaturePadView"
+                                            StrokeColor="Black"
+                                            StrokeWidth="3"
+                                            BackgroundColor="#FFFFFF"
+                                            HeightRequest="200" />
+                <Button BackgroundColor="#4F4571" TextColor="White" Text="Guardar Firma" Clicked="GuardarFirmaClicked" />
+                <Button Text="Ver Firmas" Clicked="VerFirmasClicked" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
